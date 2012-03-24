@@ -1,0 +1,42 @@
+{% extends "embed_template.html" %}
+
+{% block body %}
+<body class="iframe embedded">
+  <div id="container">
+    {% block header %}
+    <header>
+    <div class="container">
+        <div class="row">
+            <div class="twelvecol last">
+                <h2>Other Projects</h2>
+            </div>
+        </div>
+    </div>
+    </header>
+    {% endblock %}
+    <div id="main" class="container">
+        {% block main %}<!-- main -->
+            {% if projects %}        
+            <ul class="project-list">
+            {% for project in projects %}
+            <li>
+                <h3><a href="/view/project/{{project.name}}" target="_top">{{project.title}}</a></h3>
+                <div class="description">{{project.description}}</div>
+            </li>
+            {% endfor %}
+			</ul>
+			{% else %}
+			<div class="">
+				<p>No other projects to list.</p>
+			</div>
+            {% endif %}
+        {% endblock %}
+    </div>
+    <footer id="foot1" class="clearfix">
+    {% block footer %}
+    {% endblock %}
+    </footer>
+  </div> <!-- end of #container -->
+  <!-- <script src="/js/libs/jquery-1.7.min.js"></script> -->
+</body>
+{% endblock %}

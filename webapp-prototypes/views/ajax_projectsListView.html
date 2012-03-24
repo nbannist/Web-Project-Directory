@@ -1,0 +1,17 @@
+<div class="list_view">
+    <h2>Other Projects</h2>
+    {% if projects %}        
+    <ul class="project-list">
+    {% for project in projects %}
+    <li>
+        <h3><a href="/view/project/{{project.name}}" target="_top">{{project.title}}</a></h3>
+        <div class="description">{{project.description}}</div>
+    </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <div class="">
+        <p>No other projects to list.</p>
+    </div>
+    {% endif %}
+</div>

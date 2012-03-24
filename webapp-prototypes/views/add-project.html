@@ -1,0 +1,45 @@
+{% extends "global_master_page.html" %}
+
+{% block header %}<!-- header -->
+<div class="twelvecol last">
+    <h2>Directory</h2>
+    <h1>Web App Prototypes</h1>
+</div><!-- /header -->
+{% endblock %}
+
+{% block main %}<!-- main -->
+    <article class="view-project">
+        <h1>{{ appname }}</h1>
+        <form action="" method="post">
+        {% if error_msg %}
+        <div class="error message">
+            <p>{{error_msg['message']}}</p>
+            {% if project %}
+            <p>Project: <a href="/view/project/{{project.name}}">{{project.title}}</a></p>
+            {% endif %}
+        </div>
+        {% endif %}
+        <fieldset>
+            <legend></legend>
+            <div class="form-row clearfix{% if error and error['title'] %} error{% endif %}">
+                <label for="title">Title</label>
+                <input type="text" class="title" id="title" name="title" value="{{title|e}}" placeholder="Project Title" />
+                {% if error and error['title'] %}<span class="message error">{{ error['title'] }}</span>{% endif %}
+            </div>
+            <div class="form-row clearfix{% if error and error['url'] %} error{% endif %}">
+                <label for="url">URL</label>
+                <input type="text" class="url" id="url" name="url" value="{{url}}" placeholder="Project URL" />
+                {% if error and error['url'] %}<span class="message error">{{ error['url'] }}</span>{% endif %}
+            </div>
+            <div class="form-row clearfix{% if error and error['description'] %} error{% endif %}">
+                <label for="description">Description</label>
+                <textarea class="description" id="description" name="description" placeholder="Project Title">{{description}}</textarea>
+                {% if error and error['description'] %}<span class="message error">{{ error['description'] }}</span>{% endif %}
+                <span class="note">* must be 500 characters or less</span>
+            </div>
+            <div class="form-row"><input type="submit" /></div>
+            {{xsrf_form_html}}
+        </fieldset>
+        </form>
+    </article>
+{% endblock %}

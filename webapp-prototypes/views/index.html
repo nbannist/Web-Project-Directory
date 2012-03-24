@@ -1,0 +1,54 @@
+{% extends "global_master_page.html" %}
+
+
+{% block main %}<!-- main -->
+<div class="row">
+    <h1>Projects{% if user and user.administrator %} <span class="edit"><a href="/add/project/" target="_top">Add a New Project</a></span>{% endif %}</h1>
+    {% if msg %}<p class="message">{{msg}}</p>{% endif %}
+     {% if err_msg %}<p class="message error">{{err_msg}}</p>{% endif %}
+    {% if projects %}
+    <ul id="project-list" class="clearfix">
+    {% for project in projects %}
+    <li class="project clearfix">
+        <div class="matte">
+            <h2><a href="/view/project/{{project.name}}" target="_top" title="{{project.title}}">{{project.title}}</a></h2>
+            <div class="description">{{project.description}}</div>
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <div class="">
+        <h2>No projects to list.</h2>
+        {% if user and user.administrator %}<p><a href="/add/project/" target="_top">Add a New Project</a></p>{% endif %}
+    </div>
+    {% endif %}
+    <div id="projects_grid" class="clearfix"></div>
+</div>
+<script src="/js/libs/jquery-1.7.min.js"></script>
+<script src="/js/libs/jquery.wookmark.min.js"></script>
+<script>
+    
+    function makeWookMarks() {
+        // Prepare layout options.
+        var options = {
+            autoResize: true, // This will auto-update the layout when the browser window is resized.
+            container: $('ul#project-list'), // Optional, used for some extra CSS styling
+            offset: 20, // Optional, the distance between grid items
+            itemWidth: 320 // Optional, the width of a grid item
+        };
+        
+        // Get a reference to your grid items.
+        var handler = $('ul#project-list li.project');
+        // Call the layout function.
+        handler.wookmark(options);
+        
+    }
+
+
+    $(document).ready( function() {
+        // wookmark stuff
+        makeWookMarks();
+    });
+</script>
+{% endblock %}

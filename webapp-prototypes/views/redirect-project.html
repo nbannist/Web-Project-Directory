@@ -1,0 +1,24 @@
+{% extends "global_master_page.html" %}
+
+{% block main %}<!-- main -->
+<div class="container">
+    <div class="row">
+        <div class="ninecol">
+            <article class="view-project">
+                <h1>Old Name</h1>
+                <p>That URL is no longer active. Here are the projects that have used that name.</p>
+                {% if projects %}
+                <ul>
+                {% for project in projects %}
+                    <li><a href="/view/project/{{ project.project_id }}">{{project.name}}</a></li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            </article>
+        </div>
+        <div class="threecol last">
+            <iframe src="/api/v1/embed/view/projects/list/?c=5&p=1&id={{project_id}}" width="100%" height="500px" scrolling="no"></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}

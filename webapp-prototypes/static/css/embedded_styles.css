@@ -1,0 +1,168 @@
+/* styles.css 
+ @author: Nicholas Bannister-Andrews
+ @datetime: 
+*/
+
+
+/* https://github.com/paulirish/html5-boilerplate/issues/#issue/294 */
+pre {  padding: 15px; white-space: pre-wrap; word-wrap: break-word; }
+
+textarea { font-family: monospace; }
+.codehilite, .highlight { margin-bottom: 24px; }
+
+.clear { clear: both; } /* Look up the better way to clear floats without markup; I can never remember it. */
+
+body {
+    color: #666;
+    background-color: #FAFAFA;
+}
+
+.w3c header h1 {
+    color: #333;
+    margin-bottom: 0px;
+}
+.w3c header h2 {}
+header {}
+#main {}
+.row.htmlmarkup {}
+footer#foot1 {}
+footer#foot1 {}
+footer#foot1 h2 {}
+footer#foot2 {
+	background-color: #ccc;
+	color: #333;
+}
+footer#foot2 p {
+    margin-bottom: 0px;
+}
+
+.software-list li {
+    margin-bottom: 0px;
+}
+.software-list {
+    margin-left: 20px;
+}
+
+h4 {
+    font-size: 14px;
+    margin-bottom: 24px;	/* Changing this will break the baseline grid. */
+    font-family: Georgia, serif;
+    font-weight: lighter;
+    font-weight: bold;
+    font-style: italic;
+}
+
+h5 {
+    font-size: 12px;
+    margin-bottom: 24px;	/* Changing this will break the baseline grid. */
+    font-family: Georgia, serif;
+    font-weight: lighter;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 12px;
+    margin-bottom: 24px;	/* Changing this will break the baseline grid. */
+    font-family: Georgia, serif;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+
+/* COLUMNS  */
+#main-content {}
+#main-content .column {
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+#main-content .column:first-child {
+    border-top: none;
+}
+#main-content .column .content-box {}
+/* EO COLUMNS */
+
+
+.date-published time:before {
+    content: "Published on: ";
+}
+.date-last-updated time:before {
+    content: "Last Updated on: ";
+}
+.form-row {
+    padding: 5px;
+    width: 515px;
+}
+.form-row label {
+    width: 200px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    text-align: right;
+    margin-right: 5px;
+}
+.form-row input[type="text"],
+.form-row textarea {
+    width: 300px;
+    margin: 0px;
+    float: right;
+    font-family: Helvetica, Arial, san-serif;
+}
+input[type="text"],
+textarea {
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+/* ERROR */
+.form-row.error input[type="text"],
+.form-row.error textarea {
+    border: 1px solid #c33;
+}
+.form-row.error label {
+    color: #c33;
+}
+.form-row .message.error {
+    color: #c33;
+}
+/* EO ERROR  */
+.form-row .note {
+    clear: right;
+    float: right;
+    color: #15c;
+}
+.form-row .message {
+    float: right;
+}
+
+.projects { list-style: none; margin: 0px; padding: 0px; }
+.project { 
+    margin: 10px 10px 10px 10px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    float: left; 
+    width: 300px;
+    height: 200px;
+}
+.project:first-child {}
+
+
+.iframe .project-list {  }
+.iframe .project-list li {
+    margin-bottom: 5px;
+}
+
+.iframe .project-list h3 { margin: 0px; font-size: 15px; }
+.iframe .project-list .description { 
+    margin: 0px; 
+    height: 20px; 
+    font-size: 12px; 
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.iframe {}
+

@@ -1,0 +1,54 @@
+<!doctype html>  
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js w3c"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/htmlboilerplate.css">
+  <!-- The 1140px Grid -->
+  <link rel="stylesheet" href="/css/1140.css" type="text/css" media="screen" />
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen" />
+  <![endif]-->
+  <!-- Type and image presets - NOT ESSENTIAL -->
+  <link rel="stylesheet" href="/css/typeimg.css" type="text/css" media="screen" />
+  <!-- Make minor type adjustments for 1024 monitors -->
+  <link rel="stylesheet" href="/css/smallerscreen.css" media="only screen and (max-width: 1023px)" />
+  <!-- Resets grid for mobile -->
+  <link rel="stylesheet" href="/css/mobile.css" media="handheld, only screen and (max-width: 767px)" />
+  <!-- Put your layout here -->
+  <link rel="stylesheet" href="/css/layout.css" type="text/css" media="screen" />
+  <!-- Code highlighting -->
+  <!-- App Styles -->
+  <link rel="stylesheet" href="/css/embedded_styles.css" type="text/css" media="screen" />
+  <script src="/js/libs/modernizr-1.6.min.js"></script>
+</head>
+{% block body %}
+<body class="iframe embedded">
+  <div id="container">
+    {% block header %}
+    <header>
+    <div class="container">
+        <div class="row">
+            <h1>Other Projects</h1>
+        </div>
+    </div>
+    </header>
+    {% endblock %}
+    <div id="main" class="container">
+        {% block main %}
+        {% endblock %}
+    </div>
+    <footer id="foot1" class="clearfix">
+    {% block footer %}
+    {% endblock %}
+    </footer>
+  </div> <!-- end of #container -->
+  <!-- <script src="/js/libs/jquery-1.7.min.js"></script> -->
+</body>
+{% endblock %}
+</html>

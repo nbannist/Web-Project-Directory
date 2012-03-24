@@ -1,0 +1,20 @@
+<div class="grid_view">
+    {% if projects %}
+    <ul class="project-list">
+    {% for project in projects %}
+    <li>
+        <h3><a href="/view/project/{{project.name}}" target="_top">{{project.title}}</a></h3>
+        <div class="description">{{project.description}}</div>
+    </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <div class="">
+        <h3>No projects to list.</h3>
+        {% if user and user.administrator %}<p><a href="/add/project/" target="_top">Add a New Project</a></p>{% endif %}
+    </div>
+    {% endif %}
+</div>
+
+
+

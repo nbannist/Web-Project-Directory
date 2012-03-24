@@ -1,0 +1,27 @@
+{% extends "global_master_page.html" %}
+
+{% block main %}<!-- main -->
+    <article class="view-project">
+        <h1>{{project.name}}</h1>
+        <form action="" method="post">
+        {% if error_msg %}
+        <div class="error message">
+            <p>{{error_msg['message']}}</p>
+            {% if project %}
+            <p>Project: <a href="/view/project/{{project.name}}">{{project.title}}</a></p>
+            {% endif %}
+        </div>
+        {% endif %}
+        <fieldset>
+            <legend></legend>
+            <div class="form-row clearfix{% if error and error['title'] %} error{% endif %}">
+                <label for="title">Delete?</label>
+                <input type="checkbox" class="delete" id="delete" name="delete" value="{{project_id}}" />
+            </div>
+            <div class="form-row"><input type="submit" id="confirm" name="confirm" /><input type="submit" id="cancel" name="cancel" value="Cancel" /></div>
+            <input type="hidden" id="project-id" name="project-id" value="{{project_id}}" />
+            {{xsrf_form_html}}
+        </fieldset>
+        </form>
+    </article>
+{% endblock %}
